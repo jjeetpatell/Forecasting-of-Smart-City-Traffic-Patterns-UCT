@@ -1,2 +1,12 @@
 # Forecasting-of-Smart-City-Traffic-Patterns-UCT
 The Project conducts comprehensive traffic-related data prediction tasks, including data preparation, feature engineering, visualization, and model evaluation. Visualizations comprise time-series plots illustrating vehicle counts over time for distinct junctions, aiding pattern discernment.
+
+Summary of the Whole Code -
+1. Data Loading and Preprocessing: The code starts by importing required libraries, including data manipulation (NumPy, Pandas), visualization (Matplotlib, Seaborn), time handling (datetime), and machine learning tools (scikit-learn). It reads two datasets, dfTrain and dfTest, containing traffic-related data. The datetime columns are converted to datetime objects for both train and test datasets using pd.to_datetime.
+2. Feature Engineering: New features are created from the datetime information for both train and test datasets. These features include 'Weekday', 'Year', 'Month', 'Day', 'Time', 'Week', and 'Quarter'. Time-series plots are generated using Seaborn to visualize the relationship between datetime and vehicle count for different junctions.
+3. Visualization: A time-series plot illustrates the variation of vehicle counts over time, with different colors representing different junctions. Another visualization shows the distribution of vehicle counts across different years for each junction.
+4. Feature Transformation: A function named datetounix1 is defined to convert datetime objects to Unix timestamps (seconds since epoch). This function is applied to both train and test dataframes.
+5. Data Preparation: Data is prepared for modeling by storing predictor features in the 'X' array and the target variable 'Vehicles' in the 'y' array. One-hot encoding is applied using Pandas' get_dummies function to convert categorical variables into binary columns.
+6. Train-Test Split: The dataset is split into training and testing sets using train_test_split, with a test size of 33% and a specified random seed.
+7. Random Forest Regressor: A Random Forest Regressor model is created with 100 estimators (trees) and a random seed of 42. The model is trained on the training data using the fit method.
+8. Model Evaluation: Predictions are made on the test set using the trained model. Evaluation metrics are calculated, including Mean Squared Error (MSE), Mean Absolute Error (MAE), and R-squared (R2) score. The evaluation metrics are printed to assess the model's performance.
